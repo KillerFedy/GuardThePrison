@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class PlayerView : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private FixedJoystick _joystick;
+    [SerializeField] private float _speedMovement;
+
+    private Rigidbody _rigidbody;
+
+    private void Start()
     {
-        
+        _speedMovement = 5f;
+        _rigidbody = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        
+        _rigidbody.velocity = new Vector3(_joystick.Vertical * _speedMovement, _rigidbody.velocity.y, -_joystick.Horizontal * _speedMovement);
+        if(_joystick.Horizontal != 0 || _joystick.Vertical != 0)
+        {
+            transform.rotation = Quaternion.LookRotation(_rigidbody.velocity);
+        }
     }
 }

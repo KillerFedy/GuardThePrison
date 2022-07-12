@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerPresenter : MonoBehaviour
+public class PlayerPresenter
 {
-    // Start is called before the first frame update
-    void Start()
+    private PlayerModel _playerModel;
+    private PlayerView _playerView;
+
+    public PlayerPresenter(PlayerView view, PlayerModel model)
     {
-        
+        _playerView = view;
+        _playerModel = model;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

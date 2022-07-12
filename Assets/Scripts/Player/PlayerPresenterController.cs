@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class PlayerPresenterController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private PlayerView _playerView;
+    private PlayerModel _playerModel;
+    private PlayerPresenter _playerPresenter;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        _playerModel = new PlayerModel();
+        _playerPresenter = new PlayerPresenter(_playerView, _playerModel);
     }
 }
