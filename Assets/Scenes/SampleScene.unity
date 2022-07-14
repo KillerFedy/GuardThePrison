@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _joystick: {fileID: 540132101}
-  _speedMovement: 5
+  _speedMovement: 8
 --- !u!54 &58314716
 Rigidbody:
   m_ObjectHideFlags: 0
