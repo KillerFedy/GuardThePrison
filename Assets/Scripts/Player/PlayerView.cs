@@ -9,8 +9,18 @@ public class PlayerView : MonoBehaviour
 
     private Rigidbody _rigidbody;
 
+    public static PlayerView instance;
+
     private void Start()
     {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         _speedMovement = 5f;
         _rigidbody = GetComponent<Rigidbody>();
     }

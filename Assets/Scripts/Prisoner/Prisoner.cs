@@ -5,19 +5,30 @@ using UnityEngine.AI;
 
 public class Prisoner : MonoBehaviour
 {
-    [SerializeField] private GameObject _pointsParent;
-    private Transform[] _points;
+    [SerializeField] private List<Transform> _points;
     private NavMeshAgent _agent;
     private Transform _point;
+    private bool _isWaitingToRun = false;
     private void Start()
     {
-        _points = _pointsParent.GetComponentsInChildren<Transform>();
         _agent = GetComponent<NavMeshAgent>();
-        _point = _points[Random.Range(0, _points.Length)];
+        _point = _points[Random.Range(0, _points.Count)];
     }
 
     private void Update()
     {
-        _agent.SetDestination(_point.position);
+        if(!_isWaitingToRun)
+            _agent.SetDestination(_point.position);
+    }
+
+    public void StartRun()
+    {
+        _point = _points[Random.Range(0, _points.Count)];
+        _isWaitingToRun = false;
+    }
+
+    public void SetPrisonerWait()
+    {
+        _isWaitingToRun = true;
     }
 }
