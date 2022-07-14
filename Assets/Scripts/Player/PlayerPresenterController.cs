@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerPresenterController : MonoBehaviour
 {
     [SerializeField] private PlayerView _playerView;
+
     private PlayerModel _playerModel;
     private PlayerPresenter _playerPresenter;
 
