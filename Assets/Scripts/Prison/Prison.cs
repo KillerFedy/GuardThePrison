@@ -6,7 +6,7 @@ public class Prison : MonoBehaviour
 {
     [SerializeField] private List<Prisoner> _prisoners;
 
-    private float _distanceToRunPrisoners = 15f;
+    private float _distanceToRunPrisoners = 40f;
 
     private void Start()
     {
