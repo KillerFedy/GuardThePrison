@@ -3,14 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerView : MonoBehaviour
+public class Player : MonoBehaviour
 {
     [SerializeField] private FixedJoystick _joystick;
     [SerializeField] private float _speedMovement;
 
+    private List<Prisoner> _prisoners = new List<Prisoner>();
+
     private Rigidbody _rigidbody;
 
-    public static PlayerView instance;
+    public static Player instance;
+
+    public List<Prisoner> Prisoners => _prisoners;
 
     private void Start()
     {
@@ -22,8 +26,21 @@ public class PlayerView : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        _speedMovement = 5f;
         _rigidbody = GetComponent<Rigidbody>();
+    }
+
+    public void GrabPrisoner(Prisoner prisoner)
+    {
+        _prisoners.Add(prisoner);
+    }
+
+    public void DropPrisoners()
+    {
+        _prisoners.Clear();
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).SetParent(null);
+        }
     }
 
     private void FixedUpdate()
