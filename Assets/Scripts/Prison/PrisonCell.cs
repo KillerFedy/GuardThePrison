@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PrisonCell : MonoBehaviour
 {
+    private Prisoner _prisoner;
+
     private bool _isFull;
 
     public bool IsFull => _isFull;
@@ -16,6 +18,14 @@ public class PrisonCell : MonoBehaviour
     public void SetPrisoner(Prisoner prisoner)
     {
         _isFull = true;
+        _prisoner = prisoner;
         prisoner.SetInPrisonCell(this);
+    }
+
+    public void ReleasePrisoner()
+    {
+        if (_prisoner != null)
+            _prisoner.StartRun();
+        _prisoner=null;
     }
 }

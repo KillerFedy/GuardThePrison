@@ -36,10 +36,9 @@ public class Player : MonoBehaviour
 
     public void DropPrisoners()
     {
-        _prisoners.Clear();
-        for(int i = 0; i < transform.childCount; i++)
+        for(int i = 0; i < Prisoners.Count; i++)
         {
-            transform.GetChild(i).SetParent(null);
+            _prisoners[i].transform.SetParent(null);
         }
     }
 

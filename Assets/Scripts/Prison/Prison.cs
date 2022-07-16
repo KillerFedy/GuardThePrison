@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Prison : MonoBehaviour
 {
+    [SerializeField] private float _distanceToRunPrisoners;
+
     private PrisonCell[] _prisonCells;
 
     private void Start()
@@ -11,32 +13,52 @@ public class Prison : MonoBehaviour
         _prisonCells = GetComponentsInChildren<PrisonCell>();
     }
 
-    private void SetPrisonersInPrison(Player player)
+    private void Update()
     {
-        for(int i = 0; i < player.Prisoners.Count; i++)
+        if(GetDistancePlayer() > _distanceToRunPrisoners)
+        {
+            ReleasePrisoners();
+        }
+    }
+
+    private void SetPrisonersInPrison(List<Prisoner> prisoners)
+    {
+        for(int i = 0; i < prisoners.Count; i++)
         {
             for(int j = 0; j < _prisonCells.Length; j++)
             {
                 if(!_prisonCells[j].IsFull)
                 {
-                    _prisonCells[j].SetPrisoner(player.Prisoners[i]);
+                    _prisonCells[j].SetPrisoner(prisoners[i]);
                     break;
                 }
             }
         }
-        player.DropPrisoners();
+        prisoners.Clear();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.TryGetComponent<Player>(out Player player))
         {
-            Debug.Log(1);
             if(player.Prisoners.Count > 0)
             {
-                Debug.Log(2);
-                SetPrisonersInPrison(player);
+                player.DropPrisoners();
+                SetPrisonersInPrison(player.Prisoners);
             }
         }
+    }
+
+    private void ReleasePrisoners()
+    {
+        foreach (PrisonCell item in _prisonCells)
+        {
+            item.ReleasePrisoner();
+        }
+    }
+
+    private float GetDistancePlayer()
+    {
+        return Vector3.Distance(transform.position, Player.instance.transform.position);
     }
 }

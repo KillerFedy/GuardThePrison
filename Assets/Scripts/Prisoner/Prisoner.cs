@@ -37,6 +37,7 @@ public class Prisoner : MonoBehaviour
         _isRunning = false;
         _meshRenderer.enabled = false;
         transform.SetParent(Player.instance.transform);
+        Player.instance.GrabPrisoner(this);
     }
 
     public void SetPrisonerWait()
@@ -52,10 +53,12 @@ public class Prisoner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.TryGetComponent<Player>(out Player player))
+        if(_isRunning)
         {
-            GrabbedByPlayer();
-            player.GrabPrisoner(this);
+            if (other.gameObject.TryGetComponent<Player>(out Player player))
+            {
+                GrabbedByPlayer();
+            }
         }
     }
 }
