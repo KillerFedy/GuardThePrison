@@ -25,7 +25,10 @@ public class PrisonCell : MonoBehaviour
     public void ReleasePrisoner()
     {
         if (_prisoner != null)
+        {
             _prisoner.StartRun();
-        _prisoner=null;
+            _prisoner = null;
+            _isFull=false;
+        }
     }
 }
