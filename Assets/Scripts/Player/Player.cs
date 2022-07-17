@@ -8,9 +8,13 @@ public class Player : MonoBehaviour
     [SerializeField] private FixedJoystick _joystick;
     [SerializeField] private float _speedMovement;
 
+    private const float _gravity = -9.81f;
+
+    private Animator _animator;
+
     private List<Prisoner> _prisoners = new List<Prisoner>();
 
-    private Rigidbody _rigidbody;
+    private CharacterController _conroller;
 
     public static Player instance;
 
@@ -26,7 +30,9 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        _rigidbody = GetComponent<Rigidbody>();
+        _conroller = GetComponent<CharacterController>();
+        _animator = GetComponent<Animator>();
+        _animator.SetFloat("magnitudeDirection", 1);
     }
 
     public void GrabPrisoner(Prisoner prisoner)
@@ -44,10 +50,12 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rigidbody.velocity = new Vector3(_joystick.Vertical * _speedMovement, _rigidbody.velocity.y, -_joystick.Horizontal * _speedMovement);
+        Vector3 direction = new Vector3(_joystick.Vertical * _speedMovement, -1, -_joystick.Horizontal * _speedMovement);
+        _conroller.Move(direction * Time.deltaTime);
         if(_joystick.Horizontal != 0 || _joystick.Vertical != 0)
         {
-            transform.rotation = Quaternion.LookRotation(_rigidbody.velocity);
+            transform.rotation = Quaternion.LookRotation(_conroller.velocity);
         }
+        _animator.SetFloat("magnitudeDirection", direction.magnitude);
     }
 }
