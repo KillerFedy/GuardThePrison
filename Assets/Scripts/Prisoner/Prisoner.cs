@@ -15,40 +15,31 @@ public class Prisoner : MonoBehaviour
     {
         _meshRenderer = GetComponent<MeshRenderer>();
         _agent = GetComponent<NavMeshAgent>();
-        _point = _points[Random.Range(0, _points.Count)];
-    }
-
-    private void Update()
-    {
-        if (_isRunning)
-            _agent.SetDestination(_point.position);
-        else
-            _agent.SetDestination(_agent.transform.position);
+        StartRun();
     }
 
     public void StartRun()
     {
-        _point = _points[Random.Range(0, _points.Count)];
+        _agent.enabled = true;
         _isRunning = true;
+        _point = _points[Random.Range(0, _points.Count)];
+        _agent.SetDestination(_point.position);
     }
 
     private void GrabbedByPlayer()
     {
+        _agent.enabled = false;
         _isRunning = false;
         _meshRenderer.enabled = false;
         transform.SetParent(Player.instance.transform);
         Player.instance.GrabPrisoner(this);
     }
 
-    public void SetPrisonerWait()
-    {
-        _isRunning = false;
-    }
-
     public void SetInPrisonCell(PrisonCell cell)
     {
         _meshRenderer.enabled = true;
         transform.position = cell.transform.position;
+        _agent.enabled=true;
     }
 
     private void OnTriggerEnter(Collider other)
