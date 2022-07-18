@@ -7,13 +7,15 @@ public class Prisoner : MonoBehaviour
 {
     [SerializeField] private List<Transform> _points;
 
-    private MeshRenderer _meshRenderer;
+    [SerializeField]private SkinnedMeshRenderer _meshRenderer;
+    
     private NavMeshAgent _agent;
     private Transform _point;
     private bool _isRunning = true;
+    private Animator _animator;
     private void Start()
     {
-        _meshRenderer = GetComponent<MeshRenderer>();
+        _animator = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
         StartRun();
     }
@@ -24,6 +26,7 @@ public class Prisoner : MonoBehaviour
         _isRunning = true;
         _point = _points[Random.Range(0, _points.Count)];
         _agent.SetDestination(_point.position);
+        _animator.SetBool("isRunning", _isRunning);
     }
 
     private void GrabbedByPlayer()
@@ -33,6 +36,7 @@ public class Prisoner : MonoBehaviour
         _meshRenderer.enabled = false;
         transform.SetParent(Player.instance.transform);
         Player.instance.GrabPrisoner(this);
+        _animator.SetBool("isRunning", _isRunning);
     }
 
     public void SetInPrisonCell(PrisonCell cell)
