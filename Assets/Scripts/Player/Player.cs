@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 direction = new Vector3(_joystick.Vertical * _speedMovement, -1, -_joystick.Horizontal * _speedMovement);
-        _conroller.Move(direction * Time.deltaTime);
+        _conroller.Move(direction * Time.fixedDeltaTime);
         if(_joystick.Horizontal != 0 || _joystick.Vertical != 0)
         {
             transform.rotation = Quaternion.LookRotation(_conroller.velocity);
