@@ -137,6 +137,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   _meshRenderer: {fileID: 4831785142132543373}
+  _timeToUnlock: 0.7
 --- !u!195 &627660831754022749
 NavMeshAgent:
   m_ObjectHideFlags: 0

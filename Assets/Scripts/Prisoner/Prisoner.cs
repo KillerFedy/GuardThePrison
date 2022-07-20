@@ -8,11 +8,14 @@ public class Prisoner : MonoBehaviour
     [SerializeField] private List<Transform> _points;
 
     [SerializeField]private SkinnedMeshRenderer _meshRenderer;
+
+    [SerializeField] private float _timeToUnlock;
     
     private NavMeshAgent _agent;
     private Transform _point;
     private bool _isRunning = true;
     private Animator _animator;
+    private float _speed = 3.5f;
     private void Start()
     {
         _animator = GetComponent<Animator>();
@@ -46,6 +49,15 @@ public class Prisoner : MonoBehaviour
         _agent.enabled=true;
     }
 
+    private IEnumerator StartUnLockDoor(PrisonCellDoor door)
+    {
+        _agent.speed = 0;
+        _animator.SetTrigger("StartUnlock");
+        yield return new WaitForSeconds(_timeToUnlock);
+        door.Open();
+        _agent.speed = _speed;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(_isRunning)
@@ -54,6 +66,10 @@ public class Prisoner : MonoBehaviour
             {
                 GrabbedByPlayer();
             }
+        }
+        else if (other.gameObject.TryGetComponent<UnLockCollider>(out UnLockCollider collider))
+        {
+            StartCoroutine(StartUnLockDoor(collider.Door));
         }
     }
 }
