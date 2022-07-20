@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
 
     public List<Prisoner> Prisoners => _prisoners;
 
+    private Vector3 _gravityVelocity;
+
     private void Start()
     {
         if(instance == null)
@@ -56,6 +58,8 @@ public class Player : MonoBehaviour
         {
             transform.rotation = Quaternion.LookRotation(_conroller.velocity);
         }
+        _gravityVelocity.y += _gravity * Time.fixedDeltaTime;
+        _conroller.Move(_gravityVelocity * Time.fixedDeltaTime);
         _animator.SetFloat("magnitudeDirection", direction.magnitude);
     }
 }
