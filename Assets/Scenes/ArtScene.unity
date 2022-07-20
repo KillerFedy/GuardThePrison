@@ -5834,13 +5834,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 951651185}
     m_Modifications:
-    - target: {fileID: 1017049525338443338, guid: e290f927127de694da25a16d1f258882, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.54
+    - target: {fileID: 1017049525338443332, guid: e290f927127de694da25a16d1f258882, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1017049525338443338, guid: e290f927127de694da25a16d1f258882, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.59
+      propertyPath: m_LocalPosition.x
+      value: 2.69
       objectReference: {fileID: 0}
     - target: {fileID: 1017049526839162406, guid: e290f927127de694da25a16d1f258882, type: 3}
       propertyPath: m_RootOrder
@@ -5889,10 +5889,6 @@ PrefabInstance:
     - target: {fileID: 1017049526839162407, guid: e290f927127de694da25a16d1f258882, type: 3}
       propertyPath: m_Name
       value: PrisonCell
-      objectReference: {fileID: 0}
-    - target: {fileID: 8998954824665905634, guid: e290f927127de694da25a16d1f258882, type: 3}
-      propertyPath: _timeToClose
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e290f927127de694da25a16d1f258882, type: 3}

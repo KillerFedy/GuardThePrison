@@ -66,10 +66,10 @@ public class Prisoner : MonoBehaviour
             {
                 GrabbedByPlayer();
             }
-        }
-        else if (other.gameObject.TryGetComponent<UnLockCollider>(out UnLockCollider collider))
-        {
-            StartCoroutine(StartUnLockDoor(collider.Door));
+            else if (other.gameObject.TryGetComponent<UnLockCollider>(out UnLockCollider collider))
+            {
+                StartCoroutine(StartUnLockDoor(collider.Door));
+            }
         }
     }
 }
