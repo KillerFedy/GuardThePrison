@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
 
     public void GrabPrisoner(Prisoner prisoner)
     {
+        _animator.SetTrigger("catch");
         _prisoners.Add(prisoner);
     }
 

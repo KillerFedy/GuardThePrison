@@ -10,12 +10,15 @@ public class Prisoner : MonoBehaviour
     [SerializeField]private SkinnedMeshRenderer _meshRenderer;
 
     [SerializeField] private float _timeToUnlock;
-    
+
+    private const float _timeToGrabbed = 0.12f;
+
     private NavMeshAgent _agent;
     private Transform _point;
     private bool _isRunning = true;
     private Animator _animator;
     private float _speed = 3.5f;
+
     private void Start()
     {
         _animator = GetComponent<Animator>();
@@ -32,13 +35,14 @@ public class Prisoner : MonoBehaviour
         _animator.SetBool("isRunning", _isRunning);
     }
 
-    private void GrabbedByPlayer()
+    private IEnumerator GrabbedByPlayer()
     {
+        Player.instance.GrabPrisoner(this);
+        yield return new WaitForSeconds(_timeToGrabbed);
         _agent.enabled = false;
         _isRunning = false;
         _meshRenderer.enabled = false;
         transform.SetParent(Player.instance.transform);
-        Player.instance.GrabPrisoner(this);
         _animator.SetBool("isRunning", _isRunning);
     }
 
@@ -64,7 +68,7 @@ public class Prisoner : MonoBehaviour
         {
             if (other.gameObject.TryGetComponent<Player>(out Player player))
             {
-                GrabbedByPlayer();
+               StartCoroutine(GrabbedByPlayer());
             }
             else if (other.gameObject.TryGetComponent<UnLockCollider>(out UnLockCollider collider))
             {
