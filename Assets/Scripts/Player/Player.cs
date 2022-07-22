@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private FixedJoystick _joystick;
     [SerializeField] private float _speedMovement;
+    [SerializeField] private List<GameObject> _nets = new List<GameObject>();
+
+    private GameObject _activeNet;
 
     private const float _gravity = -9.81f;
 
@@ -22,6 +25,8 @@ public class Player : MonoBehaviour
 
     private Vector3 _gravityVelocity;
 
+    public bool IsGrab => _prisoners.Count > 0;
+
     private void Start()
     {
         if(instance == null)
@@ -35,6 +40,8 @@ public class Player : MonoBehaviour
         _conroller = GetComponent<CharacterController>();
         _animator = GetComponent<Animator>();
         _animator.SetFloat("magnitudeDirection", 1);
+        _activeNet = _nets[1];
+        ActivateNet();
     }
 
     public void GrabPrisoner(Prisoner prisoner)
@@ -49,6 +56,15 @@ public class Player : MonoBehaviour
         {
             _prisoners[i].transform.SetParent(null);
         }
+        _prisoners.Clear();
+        ActivateNet();
+    }
+
+    public void ActivateNet()
+    {
+        _nets[_prisoners.Count].SetActive(true);
+        _activeNet.SetActive(false);
+        _activeNet = _nets[_prisoners.Count];
     }
 
     private void FixedUpdate()

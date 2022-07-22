@@ -34,7 +34,6 @@ public class Prison : MonoBehaviour
                 }
             }
         }
-        prisoners.Clear();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -43,8 +42,8 @@ public class Prison : MonoBehaviour
         {
             if(player.Prisoners.Count > 0)
             {
-                player.DropPrisoners();
                 SetPrisonersInPrison(player.Prisoners);
+                player.DropPrisoners();
             }
         }
     }

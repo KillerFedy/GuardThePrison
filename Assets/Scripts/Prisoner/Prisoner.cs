@@ -44,6 +44,7 @@ public class Prisoner : MonoBehaviour
         _meshRenderer.enabled = false;
         transform.SetParent(Player.instance.transform);
         _animator.SetBool("isRunning", _isRunning);
+        Player.instance.ActivateNet();
     }
 
     public void SetInPrisonCell(PrisonCell cell)
@@ -68,7 +69,8 @@ public class Prisoner : MonoBehaviour
         {
             if (other.gameObject.TryGetComponent<Player>(out Player player))
             {
-               StartCoroutine(GrabbedByPlayer());
+                if(!player.IsGrab)
+                    StartCoroutine(GrabbedByPlayer());
             }
             else if (other.gameObject.TryGetComponent<UnLockCollider>(out UnLockCollider collider))
             {
