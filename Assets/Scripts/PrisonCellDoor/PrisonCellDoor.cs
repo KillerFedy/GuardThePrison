@@ -5,17 +5,19 @@ using UnityEngine;
 public class PrisonCellDoor : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
-    [SerializeField] private float _timeToClose;
+
+    private void Start()
+    {
+        Open();
+    }
 
     public void Open()
     {
         _animator.SetBool("isOpened", true);
-        StartCoroutine(Close());
     }
 
-    private IEnumerator Close()
+    public void Close()
     {
-        yield return new WaitForSeconds(_timeToClose);
         _animator.SetBool("isOpened", false);
     }
 }

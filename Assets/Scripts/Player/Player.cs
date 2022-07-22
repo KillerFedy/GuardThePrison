@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 direction = new Vector3(-_joystick.Vertical * _speedMovement, -1, _joystick.Horizontal * _speedMovement);
+        Vector3 direction = new Vector3(-_joystick.Vertical * _speedMovement, 0, _joystick.Horizontal * _speedMovement);
         _conroller.Move(direction * Time.fixedDeltaTime);
         if(_joystick.Horizontal != 0 || _joystick.Vertical != 0)
         {

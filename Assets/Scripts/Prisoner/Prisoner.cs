@@ -11,6 +11,9 @@ public class Prisoner : MonoBehaviour
 
     [SerializeField] private float _timeToUnlock;
 
+    [SerializeField] private int _timeToChangeDirection;
+    [SerializeField] private int _countStepsChangeDirection;
+
     private const float _timeToGrabbed = 0.12f;
 
     private NavMeshAgent _agent;
@@ -19,24 +22,34 @@ public class Prisoner : MonoBehaviour
     private Animator _animator;
     private float _speed = 3.5f;
 
+
+    private int _currentStepChangeDirection = 0;
+
     private void Start()
     {
         _animator = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
         StartRun();
+        InvokeRepeating("ChangeDirection", 0, _timeToChangeDirection);
     }
 
     public void StartRun()
     {
         _agent.enabled = true;
         _isRunning = true;
+        SetDirection();
+        _animator.SetBool("isRunning", _isRunning);
+    }
+
+    private void SetDirection()
+    {
         _point = _points[Random.Range(0, _points.Count)];
         _agent.SetDestination(_point.position);
-        _animator.SetBool("isRunning", _isRunning);
     }
 
     private IEnumerator GrabbedByPlayer()
     {
+        _currentStepChangeDirection = 0;
         Player.instance.GrabPrisoner(this);
         yield return new WaitForSeconds(_timeToGrabbed);
         _agent.enabled = false;
@@ -61,6 +74,15 @@ public class Prisoner : MonoBehaviour
         yield return new WaitForSeconds(_timeToUnlock);
         door.Open();
         _agent.speed = _speed;
+    }
+
+    private void ChangeDirection()
+    {
+        if(_currentStepChangeDirection < _countStepsChangeDirection && (_isRunning))
+        {
+            _currentStepChangeDirection++;
+            SetDirection();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
