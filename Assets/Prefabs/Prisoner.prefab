@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 627660831754022748}
   - component: {fileID: 627660831754022749}
   - component: {fileID: 627660831754022746}
+  - component: {fileID: 7942522193254645793}
   m_Layer: 0
   m_Name: Prisoner
   m_TagString: Untagged
@@ -175,6 +176,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.4, z: 0.55}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &7942522193254645793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627660831754022747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.041333135, g: 0.02691348, b: 0.1981132, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &668036787262766851
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,7 +275,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5678902568114942300, guid: d02cca850ea060048bfaa4a4fdd0c86f, type: 3}
+  - {fileID: 2100000, guid: e2a4847735074c1489736ac31b83a0c8, type: 2}
   - {fileID: 2100000, guid: 8628d650673625c4f8c21c964a5159a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0

@@ -150,7 +150,27 @@ ModelImporter:
   - first:
       74: -4996645782912704044
     second: Armature.002|ynsfr7djsaznAction
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 02 - Default
+    second: {fileID: 2100000, guid: 8628d650673625c4f8c21c964a5159a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 03 - Default
+    second: {fileID: 2100000, guid: 8628d650673625c4f8c21c964a5159a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: clothes.011
+    second: {fileID: 2100000, guid: 8628d650673625c4f8c21c964a5159a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: skin.011
+    second: {fileID: 2100000, guid: e2a4847735074c1489736ac31b83a0c8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
