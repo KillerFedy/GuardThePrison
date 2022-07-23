@@ -6009,7 +6009,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1170316727}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -16.82, y: 1.73, z: -9.04}
+  m_LocalPosition: {x: -16.4, y: 1.73, z: -9.04}
   m_LocalScale: {x: 1, y: 1, z: 2.3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7074,7 +7074,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1409008207}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 1.03, y: 1.73, z: -9.04}
+  m_LocalPosition: {x: 0.76, y: 1.73, z: -9.04}
   m_LocalScale: {x: 1, y: 1, z: 2.3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8828,7 +8828,7 @@ GameObject:
   - component: {fileID: 2083466624}
   - component: {fileID: 2083466623}
   m_Layer: 0
-  m_Name: PrisonersStatement
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

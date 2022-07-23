@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PrisonersStatement : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     private int _countOfPrisoners = 0;
     private int _countOfGrabbedPrisoners = 0;
