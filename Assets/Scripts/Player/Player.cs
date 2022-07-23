@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private FixedJoystick _joystick;
+    [SerializeField] private Joystick _joystick;
     [SerializeField] private float _speedMovement;
     [SerializeField] private List<GameObject> _nets = new List<GameObject>();
     [SerializeField] private CharacterController _conroller;

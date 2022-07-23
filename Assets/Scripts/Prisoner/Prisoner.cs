@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using System;
 
 public class Prisoner : MonoBehaviour
 {
@@ -25,6 +26,10 @@ public class Prisoner : MonoBehaviour
 
     private int _currentStepChangeDirection = 0;
 
+    public event Action OnRanAway;
+    public event Action OnRanAwayFromCell;
+    public event Action OnSetInPrison;
+
     private void Start()
     {
         _animator = GetComponent<Animator>();
@@ -43,7 +48,7 @@ public class Prisoner : MonoBehaviour
 
     private void SetDirection()
     {
-        _point = _points[Random.Range(0, _points.Count)];
+        _point = _points[UnityEngine.Random.Range(0, _points.Count)];
         _agent.SetDestination(_point.position);
     }
 
