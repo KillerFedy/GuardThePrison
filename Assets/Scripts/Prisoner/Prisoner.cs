@@ -6,9 +6,15 @@ using System;
 
 public class Prisoner : MonoBehaviour
 {
+    public static event Action OnInitialized;
+
+    public static event Action OnRanAway;
+    public static event Action OnRanAwayFromCell;
+    public static event Action OnSetInPrison;
+
     [SerializeField] private List<Transform> _points;
 
-    [SerializeField]private SkinnedMeshRenderer _meshRenderer;
+    [SerializeField] private SkinnedMeshRenderer _meshRenderer;
 
     [SerializeField] private float _timeToUnlock;
 
@@ -26,12 +32,9 @@ public class Prisoner : MonoBehaviour
 
     private int _currentStepChangeDirection = 0;
 
-    public event Action OnRanAway;
-    public event Action OnRanAwayFromCell;
-    public event Action OnSetInPrison;
-
     private void Start()
     {
+        OnInitialized();
         _animator = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
         StartRun();
@@ -70,6 +73,7 @@ public class Prisoner : MonoBehaviour
         _meshRenderer.enabled = true;
         transform.position = cell.transform.position;
         _agent.enabled=true;
+        OnSetInPrison();
     }
 
     private IEnumerator StartUnLockDoor(PrisonCellDoor door)
@@ -79,6 +83,7 @@ public class Prisoner : MonoBehaviour
         yield return new WaitForSeconds(_timeToUnlock);
         door.Open();
         _agent.speed = _speed;
+        OnRanAwayFromCell();
     }
 
     private void ChangeDirection()
@@ -88,6 +93,12 @@ public class Prisoner : MonoBehaviour
             _currentStepChangeDirection++;
             SetDirection();
         }
+    }
+
+    private void RunAway()
+    {
+        OnRanAway();
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -102,6 +113,10 @@ public class Prisoner : MonoBehaviour
             else if (other.gameObject.TryGetComponent<UnLockCollider>(out UnLockCollider collider))
             {
                 StartCoroutine(StartUnLockDoor(collider.Door));
+            }
+            else if(other.gameObject.TryGetComponent<ExitPoint>(out ExitPoint point))
+            {
+                RunAway();
             }
         }
     }

@@ -4,19 +4,13 @@ using UnityEngine;
 
 public class PrisonersStatement : MonoBehaviour
 {
-    [SerializeField] private List<Prisoner> _prisoners = new List<Prisoner>();
-
-    private int _countOfPrisoners;
+    private int _countOfPrisoners = 0;
     private int _countOfGrabbedPrisoners = 0;
     private int _countOfRunAwayPrisoners = 0;
 
-    private void Start()
+    private void Awake()
     {
-        _countOfPrisoners = _prisoners.Count;
-        foreach (Prisoner prisoner in _prisoners)
-        {
-            InitPrisonerActions(prisoner);
-        }
+        InitPrisonerActions();
     }
 
     private void CheckStatement()
@@ -39,10 +33,16 @@ public class PrisonersStatement : MonoBehaviour
         _countOfGrabbedPrisoners--;
     }
 
-    public void InitPrisonerActions(Prisoner prisoner)
+    private void CountPrisoners()
     {
-        prisoner.OnRanAway += CountRunAwayPrisoner;
-        prisoner.OnRanAwayFromCell += DeleteGrabbedPrisoner;
-        prisoner.OnSetInPrison += CountGrabbedPrisoner;
+        _countOfPrisoners++;
+    }
+
+    private void InitPrisonerActions()
+    {
+        Prisoner.OnInitialized += CountPrisoners;
+        Prisoner.OnRanAway += CountRunAwayPrisoner;
+        Prisoner.OnRanAwayFromCell += DeleteGrabbedPrisoner;
+        Prisoner.OnSetInPrison += CountGrabbedPrisoner;
     }
 }
