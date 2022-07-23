@@ -17,11 +17,11 @@ public class PrisonersStatement : MonoBehaviour
     {
         if(_countOfGrabbedPrisoners > (_countOfPrisoners / 2))
         {
-            Debug.Log("WIN");
+            //Debug.Log("WIN");
         }
         else if(_countOfRunAwayPrisoners > (_countOfPrisoners / 2))
         {
-            Debug.Log("No");
+            //Debug.Log("No");
         }
     }
 
