@@ -8,16 +8,16 @@ public class Player : MonoBehaviour
     [SerializeField] private FixedJoystick _joystick;
     [SerializeField] private float _speedMovement;
     [SerializeField] private List<GameObject> _nets = new List<GameObject>();
+    [SerializeField] private CharacterController _conroller;
+    [SerializeField] private Animator _animator;
 
     private GameObject _activeNet;
 
     private const float _gravity = -9.81f;
 
-    private Animator _animator;
 
     private List<Prisoner> _prisoners = new List<Prisoner>();
 
-    private CharacterController _conroller;
 
     public static Player instance;
 
@@ -37,8 +37,6 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        _conroller = GetComponent<CharacterController>();
-        _animator = GetComponent<Animator>();
         _animator.SetFloat("magnitudeDirection", 1);
         _activeNet = _nets[1];
         ActivateNet();

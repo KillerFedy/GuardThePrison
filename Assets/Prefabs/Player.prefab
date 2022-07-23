@@ -1038,6 +1038,8 @@ MonoBehaviour:
   _joystick: {fileID: 0}
   _speedMovement: 8
   _nets: []
+  _conroller: {fileID: 6852372636308618781}
+  _animator: {fileID: 1040913372671411073}
 --- !u!1 &6367142040492509096
 GameObject:
   m_ObjectHideFlags: 0
