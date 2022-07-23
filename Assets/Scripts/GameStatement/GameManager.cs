@@ -15,23 +15,14 @@ public class GameManager : MonoBehaviour
 
     private void CheckStatement()
     {
-        if(_countOfGrabbedPrisoners > (_countOfPrisoners / 2))
+        if (_countOfGrabbedPrisoners > (_countOfPrisoners / 2))
         {
-<<<<<<< HEAD:Assets/Scripts/GameStatement/PrisonersStatement.cs
-            //Debug.Log("Win");
+            Debug.Log("Win");
         }
-        else if(_countOfRunAwayPrisoners > (_countOfPrisoners / 2))
+        else if (_countOfRunAwayPrisoners > (_countOfPrisoners / 2))
         {
-           // Debug.Log("Lose");
-        }    
-=======
-            //Debug.Log("WIN");
+            Debug.Log("Lose");
         }
-        else if(_countOfRunAwayPrisoners > (_countOfPrisoners / 2))
-        {
-            //Debug.Log("No");
-        }
->>>>>>> develop:Assets/Scripts/GameStatement/GameManager.cs
     }
 
     private void CountRunAwayPrisoner()
