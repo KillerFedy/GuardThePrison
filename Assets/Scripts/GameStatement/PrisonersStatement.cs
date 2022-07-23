@@ -15,17 +15,26 @@ public class PrisonersStatement : MonoBehaviour
 
     private void CheckStatement()
     {
-
+        if(_countOfGrabbedPrisoners > (_countOfPrisoners / 2))
+        {
+            //Debug.Log("Win");
+        }
+        else if(_countOfRunAwayPrisoners > (_countOfPrisoners / 2))
+        {
+           // Debug.Log("Lose");
+        }    
     }
 
     private void CountRunAwayPrisoner()
     {
         _countOfRunAwayPrisoners++;
+        CheckStatement();
     }
 
     private void CountGrabbedPrisoner()
     {
         _countOfGrabbedPrisoners++;
+        CheckStatement();
     }
 
     private void DeleteGrabbedPrisoner()
