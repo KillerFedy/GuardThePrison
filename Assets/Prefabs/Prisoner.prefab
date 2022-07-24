@@ -157,6 +157,8 @@ MonoBehaviour:
   _timeToUnlock: 0.7
   _timeToChangeDirection: 6
   _countStepsChangeDirection: 7
+  _agent: {fileID: 627660831754022749}
+  _animator: {fileID: 6133368653759016859}
 --- !u!195 &627660831754022749
 NavMeshAgent:
   m_ObjectHideFlags: 0

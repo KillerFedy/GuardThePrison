@@ -23,6 +23,11 @@ public class GameManager : MonoBehaviour
         InitPrisonerActions();
     }
 
+    private void Start()
+    {
+        StartCoroutine(WaitToCountPrisoners());
+    }
+
     private void CheckStatement()
     {
         if (_countOfGrabbedPrisoners > (_countOfPrisoners / 2))
@@ -58,6 +63,11 @@ public class GameManager : MonoBehaviour
     private void CountPrisoners()
     {
         _countOfPrisoners++;
+    }
+
+    private IEnumerator WaitToCountPrisoners()
+    {
+        yield return new WaitForSeconds(0.2f);
         OnCountPrisoners(_countOfPrisoners);
     }
 

@@ -26,10 +26,10 @@ public class Prisoner : MonoBehaviour
 
     private const float _timeToGrabbed = 0.12f;
 
-    private NavMeshAgent _agent;
+    [SerializeField]private NavMeshAgent _agent;
     private Transform _point;
     private bool _isRunning = true;
-    private Animator _animator;
+    [SerializeField]private Animator _animator;
     private float _speed = 3.5f;
 
 
@@ -38,8 +38,10 @@ public class Prisoner : MonoBehaviour
     private void Start()
     {
         OnInitialized();
-        _animator = GetComponent<Animator>();
-        _agent = GetComponent<NavMeshAgent>();
+    }
+
+    private void Awake()
+    {
         StartRun();
         InvokeRepeating("ChangeDirection", 0, _timeToChangeDirection);
     }
