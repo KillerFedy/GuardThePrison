@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.AI;
 using System;
 
@@ -11,6 +12,8 @@ public class Prisoner : MonoBehaviour
     public static event Action OnRanAway;
     public static event Action OnRanAwayFromCell;
     public static event Action OnSetInPrison;
+
+    public UnityEvent OnGrabbed;
 
     [SerializeField] private List<Transform> _points;
 
@@ -108,7 +111,10 @@ public class Prisoner : MonoBehaviour
             if (other.gameObject.TryGetComponent<Player>(out Player player))
             {
                 if(!player.IsGrab)
+                {
                     StartCoroutine(GrabbedByPlayer());
+                    OnGrabbed.Invoke();
+                }
             }
             else if (other.gameObject.TryGetComponent<UnLockCollider>(out UnLockCollider collider))
             {

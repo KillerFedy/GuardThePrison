@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Prison : MonoBehaviour
 {
+    public UnityEvent OnBringPrisoner;
+
     [SerializeField] private float _distanceToRunPrisoners;
 
     private PrisonCell[] _prisonCells;
@@ -42,6 +45,7 @@ public class Prison : MonoBehaviour
         {
             if(player.Prisoners.Count > 0)
             {
+                OnBringPrisoner.Invoke();
                 SetPrisonersInPrison(player.Prisoners);
                 player.DropPrisoners();
             }
