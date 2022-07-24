@@ -1,0 +1,269 @@
+fileFormatVersion: 2
+guid: b38743245f43eea4bb3e71c094c2668e
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: -3880581976594992817
+    second: ArmatureAction
+  - first:
+      74: 4781951162920444690
+    second: Armature|ArmatureAction
+  - first:
+      74: -1422011007694221501
+    second: Armature|ArmatureAction.001
+  - first:
+      74: 6093225430303232669
+    second: Armature|ArmatureAction.002
+  - first:
+      74: 6065333994261340666
+    second: Armature|Armature|Armature|ArmatureAction
+  - first:
+      74: -1317258480896647174
+    second: Armature|Armature|Armature|Armature|ArmatureAction
+  - first:
+      74: -8091138974715028128
+    second: Armature|Armature|Armature|Armature|ArmatureAction.001
+  - first:
+      74: 1272477167644287873
+    second: Armature|Armature|Armature|Armature|Armature|ArmatureAction
+  - first:
+      74: -7232962046965978176
+    second: Armature|Armature|Armature|Armature|Armature|ArmatureAction.001
+  - first:
+      74: 1062721595515975748
+    second: Armature|Armature|Armature|Armature|Armature|Armature|mixamo.com|Lay
+  - first:
+      74: -2424007849307542720
+    second: Armature|Armature|Armature|Armature|Armature|Armature|mixamo.com|Lay.001
+  - first:
+      74: -5989579420725052391
+    second: Armature|Armature|Armature|Armature|Armature|Armature|mixamo.com|Layer0
+  - first:
+      74: 8644037110002211101
+    second: Armature|Armature|Armature|Armature|Armature|Armature|mixamo.com|Layer0.
+  - first:
+      74: 6759086803382991731
+    second: Armature|Armature|Armature|Armature|mixamo.com|Layer0
+  - first:
+      74: -2770135929185916639
+    second: Armature|Armature|Armature|Armature|mixamo.com|Layer0.001
+  - first:
+      74: -9085538313502317819
+    second: Armature|Armature|Armature|Armature|mixamo.com|Layer0.002
+  - first:
+      74: 7379279194673409435
+    second: Armature|Armature|Armature|Armature|mixamo.com|Layer0.003
+  - first:
+      74: 5631034669171225375
+    second: Armature|Armature|Armature|Armature|mixamo.com|Layer0.004
+  - first:
+      74: -3128114041125691840
+    second: Armature|Armature|Armature|Armature|mixamo.com|Layer0.005
+  - first:
+      74: -3063133836741364364
+    second: Armature|Armature|Armature|Armature|mixamo.com|Layer0.006
+  - first:
+      74: -8754709677547971067
+    second: Armature|Armature|Armature|Armature|mixamo.com|Layer0.007
+  - first:
+      74: 753460279148331838
+    second: Armature|Armature|Armature|Armature|mixamo.com|Layer0.008
+  - first:
+      74: -6369693604743369196
+    second: Armature|Armature|Armature|ynsfr7djsaznAction
+  - first:
+      74: -4642735369400223020
+    second: Armature|ynsfr7djsaznAction
+  - first:
+      74: -2481194294512823253
+    second: ynsfr7djsazn|Armature|Armature|ArmatureAction
+  - first:
+      74: 2056738076804001621
+    second: ynsfr7djsazn|ynsfr7djsaznAction
+  - first:
+      74: -3997514183246978980
+    second: Armature.002|ArmatureAction
+  - first:
+      74: 8368265636151829555
+    second: Armature.002|ArmatureAction.001
+  - first:
+      74: -664916953551355124
+    second: Armature.002|ArmatureAction.002
+  - first:
+      74: 7600389750405700225
+    second: Armature.002|Armature|Armature|ArmatureAction
+  - first:
+      74: -8066651620178676658
+    second: Armature.002|Armature|Armature|Armature|ArmatureAction
+  - first:
+      74: 8443797676477694062
+    second: Armature.002|Armature|Armature|Armature|ArmatureAction.001
+  - first:
+      74: 4772894940123269279
+    second: Armature.002|Armature|Armature|Armature|Armature|ArmatureAction
+  - first:
+      74: -6081150456248593815
+    second: Armature.002|Armature|Armature|Armature|Armature|ArmatureAction.001
+  - first:
+      74: 7854208374089103296
+    second: Armature.002|Armature|Armature|Armature|Armature|Armature|mixamo.com|Lay
+  - first:
+      74: -846829256104914464
+    second: Armature.002|Armature|Armature|Armature|Armature|Armature|mixamo.com|Lay.001
+  - first:
+      74: 1975659634966723777
+    second: Armature.002|Armature|Armature|Armature|Armature|Armature|mixamo.com|Layer0
+  - first:
+      74: -3182120658670176348
+    second: Armature.002|Armature|Armature|Armature|Armature|Armature|mixamo.com|Layer0.
+  - first:
+      74: -2524722268733386081
+    second: Armature.002|Armature|Armature|Armature|mixamo.com|Layer0
+  - first:
+      74: 1199042150684794245
+    second: Armature.002|Armature|Armature|Armature|mixamo.com|Layer0.001
+  - first:
+      74: -1447761634052386193
+    second: Armature.002|Armature|Armature|Armature|mixamo.com|Layer0.002
+  - first:
+      74: -4955959553506476571
+    second: Armature.002|Armature|Armature|Armature|mixamo.com|Layer0.003
+  - first:
+      74: -7881646612421473217
+    second: Armature.002|Armature|Armature|Armature|mixamo.com|Layer0.004
+  - first:
+      74: 6955695313374935873
+    second: Armature.002|Armature|Armature|Armature|mixamo.com|Layer0.005
+  - first:
+      74: 4597274336144559944
+    second: Armature.002|Armature|Armature|Armature|mixamo.com|Layer0.006
+  - first:
+      74: 1579613270243401687
+    second: Armature.002|Armature|Armature|Armature|mixamo.com|Layer0.007
+  - first:
+      74: -9120431184899812315
+    second: Armature.002|Armature|Armature|Armature|mixamo.com|Layer0.008
+  - first:
+      74: 3918794290010557061
+    second: Armature.002|Armature|Armature|ynsfr7djsaznAction
+  - first:
+      74: -4996645782912704044
+    second: Armature.002|ynsfr7djsaznAction
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 02 - Default
+    second: {fileID: 2100000, guid: 8628d650673625c4f8c21c964a5159a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 03 - Default
+    second: {fileID: 2100000, guid: 8628d650673625c4f8c21c964a5159a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: clothes.011
+    second: {fileID: 2100000, guid: 8628d650673625c4f8c21c964a5159a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: skin.011
+    second: {fileID: 2100000, guid: e2a4847735074c1489736ac31b83a0c8, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
