@@ -23,11 +23,6 @@ public class GameManager : MonoBehaviour
         InitPrisonerActions();
     }
 
-    private void Start()
-    {
-        StartCoroutine(WaitToCountPrisoners());
-    }
-
     private void CheckStatement()
     {
         if (_countOfGrabbedPrisoners > (_countOfPrisoners / 2))
@@ -63,12 +58,7 @@ public class GameManager : MonoBehaviour
     private void CountPrisoners()
     {
         _countOfPrisoners++;
-    }
-
-    private IEnumerator WaitToCountPrisoners()
-    {
-        yield return new WaitForSeconds(0.2f);
-        OnCountPrisoners(_countOfPrisoners);
+        OnCountPrisoners?.Invoke(_countOfPrisoners);
     }
 
     private void InitPrisonerActions()
@@ -77,5 +67,13 @@ public class GameManager : MonoBehaviour
         Prisoner.OnRanAway += CountRunAwayPrisoner;
         Prisoner.OnRanAwayFromCell += DeleteGrabbedPrisoner;
         Prisoner.OnSetInPrison += CountGrabbedPrisoner;
+    }
+
+    private void OnDestroy()
+    {
+        Prisoner.OnInitialized -= CountPrisoners;
+        Prisoner.OnRanAway -= CountRunAwayPrisoner;
+        Prisoner.OnRanAwayFromCell -= DeleteGrabbedPrisoner;
+        Prisoner.OnSetInPrison -= CountGrabbedPrisoner;
     }
 }

@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text _countPrisonersText;
     [SerializeField] private Text _countGrabbedPrisonersText;
 
-    private void Start()
+    private void Awake()
     {
         InitGameManagerActions();
     }
@@ -51,5 +51,13 @@ public class UIManager : MonoBehaviour
         GameManager.OnLose += ActivateLosePanel;
         GameManager.OnCountPrisoners += SetCountPrisonersText;
         GameManager.OnCountGrabbedPrisoners += SetCountGrabbedPrisonersText;
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.OnWin -= ActivateWinPanel;
+        GameManager.OnLose -= ActivateLosePanel;
+        GameManager.OnCountPrisoners -= SetCountPrisonersText;
+        GameManager.OnCountGrabbedPrisoners -= SetCountGrabbedPrisonersText;
     }
 }
