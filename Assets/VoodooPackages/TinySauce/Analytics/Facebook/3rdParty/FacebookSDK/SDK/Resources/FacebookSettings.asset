@@ -16,9 +16,9 @@ MonoBehaviour:
   clientTokens:
   - 
   appIds:
-  - 0
+  - 460198925929219
   appLabels:
-  - App Name
+  - GuardOfPrison
   cookie: 1
   logging: 1
   status: 1
