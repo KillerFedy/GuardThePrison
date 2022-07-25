@@ -162,8 +162,11 @@ PlayerSettings:
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 22
 <<<<<<< HEAD
+<<<<<<< HEAD
   AndroidTargetSdkVersion: 30
 =======
+=======
+>>>>>>> 6a899372e934c65c6e9a87b38c3ea6996688178e
   AndroidTargetSdkVersion: 0
 >>>>>>> 6a899372e934c65c6e9a87b38c3ea6996688178e
   AndroidPreferredInstallLocation: 1
@@ -255,6 +258,9 @@ PlayerSettings:
   useCustomBaseGradleTemplate: 0
   useCustomGradlePropertiesTemplate: 0
   useCustomProguardFile: 0
+<<<<<<< HEAD
+>>>>>>> 6a899372e934c65c6e9a87b38c3ea6996688178e
+=======
 >>>>>>> 6a899372e934c65c6e9a87b38c3ea6996688178e
   AndroidTargetArchitectures: 3
   AndroidTargetDevices: 0
