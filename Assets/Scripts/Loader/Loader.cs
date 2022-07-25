@@ -9,7 +9,7 @@ public class Loader : MonoBehaviour
 
     public void RestartScene()
     {
-        SceneManager.LoadScene(SceneManager.sceneCount);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void StartNextLevel()
