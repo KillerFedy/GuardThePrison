@@ -20,15 +20,7 @@
     <setting name="bundleId" value="com.OttziGames.GuardOfPrison" />
     <setting name="explodeAars" value="True" />
     <setting name="gradleBuildEnabled" value="True" />
-<<<<<<< HEAD
-<<<<<<< HEAD
     <setting name="gradlePropertiesTemplateEnabled" value="True" />
-=======
-    <setting name="gradlePropertiesTemplateEnabled" value="False" />
->>>>>>> 6a899372e934c65c6e9a87b38c3ea6996688178e
-=======
-    <setting name="gradlePropertiesTemplateEnabled" value="False" />
->>>>>>> 6a899372e934c65c6e9a87b38c3ea6996688178e
     <setting name="gradleTemplateEnabled" value="True" />
     <setting name="installAndroidPackages" value="True" />
     <setting name="localMavenRepoDir" value="Assets/GeneratedLocalRepo" />
@@ -36,14 +28,6 @@
     <setting name="patchAndroidManifest" value="True" />
     <setting name="patchMainTemplateGradle" value="True" />
     <setting name="projectExportEnabled" value="False" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <setting name="useJetifier" value="True" />
-=======
     <setting name="useJetifier" value="False" />
->>>>>>> 6a899372e934c65c6e9a87b38c3ea6996688178e
-=======
-    <setting name="useJetifier" value="False" />
->>>>>>> 6a899372e934c65c6e9a87b38c3ea6996688178e
   </settings>
 </dependencies>
