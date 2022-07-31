@@ -52,10 +52,6 @@ public class GameManager : MonoBehaviour
     private void DeleteGrabbedPrisoner()
     {
         _countOfGrabbedPrisoners--;
-        if(_countOfGrabbedPrisoners < 0)
-        {
-            _countOfGrabbedPrisoners = 0;
-        }
         OnCountGrabbedPrisoners(_countOfGrabbedPrisoners);
     }
 
